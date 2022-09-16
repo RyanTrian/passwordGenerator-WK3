@@ -10,13 +10,12 @@ function generatePassword() {
 
   // Ask for the password's desired length
   let pwLength = prompt("Please indicate desired password length between 8-128 characters");
-  // If user click Cancel, run fx generatePassword again
-  // if (pwLength === null) {
-  //   generatePassword();
-  // }
-
+  // If user click Cancel, terminate.
+  if (pwLength === null) {
+    return;
+  }
   // If the pwLength is out of range, run generatePassword again
-  if (pwLength < 8 || pwLength > 128) {
+  else if (pwLength < 8 || pwLength > 128) {
     alert("Please enter a value in 8-128");
     return generatePassword();
   }
@@ -31,6 +30,7 @@ function generatePassword() {
     // console.log(number);
     let specialChar = confirm("Will special characters be included?");
     // console.log(specialChar);
+    // If user did not choose any of the above, loop back to userConfirms()
     if (!(letter || upperCase || number || specialChar)) {
       alert("Must confirm at least one")
       return userConfirms();
