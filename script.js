@@ -30,6 +30,7 @@ function generatePassword() {
     // console.log(number);
     let specialChar = confirm("Will special characters be included?");
     // console.log(specialChar);
+    // If user did not choose any of the above, loop back to userConfirms()
     if (!(letter || upperCase || number || specialChar)) {
       alert("Must confirm at least one")
       return userConfirms();
