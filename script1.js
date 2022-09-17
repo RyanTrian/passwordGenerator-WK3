@@ -70,11 +70,9 @@ function generatePassword() {
     let randomChar = userChoice[randomIndex][randomIndex2];
     generatedPassword = generatedPassword.concat(randomChar);
   }
-  var varArray = [generatedPassword, userChoice, n, pwLength];
-  console.log(varArray);
-  return varArray;
-}
-console.log(typeof varArray[0]);
+  var array = [generatedPassword, userChoice, n, pwLength];
+  return array;
+} //The end of generatePassword function
 //Reference to Generate Button
 var generateBtn = document.querySelector("#generate");
 
@@ -82,9 +80,9 @@ var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
 function writePassword() {
   if (passwordText.value === "") {
-    generatePassword();
+    varArray = generatePassword();
   }
-  let password = varArray[0].toString();
+  let password = varArray[0];
 
   passwordText.value = password;
 }
