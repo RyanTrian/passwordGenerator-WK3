@@ -30,7 +30,7 @@ function generatePassword() {
     // console.log(specialChar);
     if (!(letter || upperCase || number || specialChar)) {
       alert("Must confirm at least one");
-      userConfirms();
+      return userConfirms();
     }
     return [letter, upperCase, number, specialChar];
   }
@@ -40,7 +40,7 @@ function generatePassword() {
   userUpper = userBoolean[1];
   userNumber = userBoolean[2];
   userSpecial = userBoolean[3];
-
+  
   // Create an array that nested the array constants if Boolean value is true
   var userChoice = new Array();
   var n = 0;
