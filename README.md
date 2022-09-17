@@ -21,8 +21,8 @@ A password generator coded with JS. Generate a password based on user's answers 
 1. Click the "Generate Password" button
 2. Answer how long the password should be
 3. Confirm or Cancel four boxes that ask if lower-case, upper-case, number or special characters should be included
-4. Click the button again, then confirm the box If want another password.
-5. Reset the page if want to apply different rules to the password.
+4. If want another password, click the button again, then confirm the box .
+5. Need to apply different rules, reset the page.
 
 
 ## Challenges 🤔
