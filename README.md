@@ -27,7 +27,7 @@ A password generator coded with JS. Generate a password based on user's answers 
 
 ## Challenges 🤔
 
-- A quite common solution is pool whichever characters array that user want to a new array and math.random that new array. I think with that solution, it could create a password which has one type of character more than the other, ex. too many lower case letter. 
+- A quite common solution is to pool whichever characters array that user want to a new array and math.random that new array. I think with that solution, it could create a password which has one type of character more than the other, ex. too many lower case letter. 
   - Therefore, I used **nested arrays** instead. A new array that will contain the character-array users want, then have math.random pick one of the nested array, and math.random again to pick an element inside that array. It required some if logic to create the array that hold user's choices. 
 - After doing multiple tests, I didn't like that to create a second password I have to answers all the questions again. So I added an If logic inside the "Generate Password" button's click event. User just need to click the button again and confirms they want another password, a different password will generate with the same rules from the previous one. 
 
