@@ -30,7 +30,7 @@ function generatePassword() {
     // console.log(specialChar);
     if (!(letter || upperCase || number || specialChar)) {
       alert("Must confirm at least one");
-      return userConfirms();
+      userConfirms();
     }
     return [letter, upperCase, number, specialChar];
   }
@@ -46,15 +46,21 @@ function generatePassword() {
   var n = 0;
   if (userLetter) {
     userChoice[n] = lower;
-    n++;
+    if (userUpper || userNumber || userSpecial) {
+      n++;
+    }
   }
   if (userUpper) {
     userChoice[n] = upper;
-    n++;
+    if (userNumber || userSpecial) {
+      n++;
+    }
   }
   if (userNumber) {
     userChoice[n] = number;
-    n++;
+    if (userSpecial) {
+      n++;
+    }
   }
   if (userSpecial) {
     userChoice[n] = specialChar;
@@ -64,9 +70,7 @@ function generatePassword() {
   let generatedPassword = "";
   for (let i = 0; i < pwLength; i++) {
     let randomIndex = Math.floor(Math.random() * (n + 1));
-    let randomIndex2 = Math.floor(
-      Math.random() * userChoice[randomIndex].length
-    );
+    let randomIndex2 = Math.floor(Math.random() * userChoice[randomIndex].length);
     let randomChar = userChoice[randomIndex][randomIndex2];
     generatedPassword = generatedPassword.concat(randomChar);
   }
@@ -98,9 +102,7 @@ generateBtn.addEventListener("click", function () {
       let generatedPassword = "";
       for (let i = 0; i < pwLength; i++) {
         let randomIndex = Math.floor(Math.random() * (n + 1));
-        let randomIndex2 = Math.floor(
-          Math.random() * userChoice[randomIndex].length
-        );
+        let randomIndex2 = Math.floor(Math.random() * userChoice[randomIndex].length);
         let randomChar = userChoice[randomIndex][randomIndex2];
         generatedPassword = generatedPassword.concat(randomChar);
       }
